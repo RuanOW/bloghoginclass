@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "445472704495",
+    "firebase_url": "https://owbloghog.firebaseio.com",
+    "project_id": "owbloghog",
+    "storage_bucket": "owbloghog.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445472704495:android:5c0a2c929cabccd33f181a",
+        "android_client_info": {
+          "package_name": "com.example.bloghoginclass"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445472704495-2sh6ru4u9lirhp389gbtev6beqr7uckd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCF-bOx2ultJbLTH3hrxKR28BfTDSuxo7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445472704495-2sh6ru4u9lirhp389gbtev6beqr7uckd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
