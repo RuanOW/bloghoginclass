@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_homeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_writeBlogFragment"
+            app:destination="@id/writeBlogFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -36,6 +39,15 @@
             app:destination="@id/registerFragment" />
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/writeBlogFragment"
+        android:name="com.example.bloghoginclass.WriteBlogFragment"
+        android:label="fragment_write_blog"
+        tools:layout="@layout/fragment_write_blog" >
+        <action
+            android:id="@+id/action_writeBlogFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
 </navigation>
