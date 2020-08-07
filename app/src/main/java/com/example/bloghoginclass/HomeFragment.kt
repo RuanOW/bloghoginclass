@@ -39,11 +39,19 @@ class HomeFragment : Fragment() {
         var adapter = GroupAdapter<GroupieViewHolder>()
         binding.allBlogRecyclerView.adapter = adapter
 
+        adapter.setOnItemClickListener { item, view ->
+            val blogItem = item as BlogItem
+            Log.d("ItemClicked", "Item ID: ${blogItem.blogItem.id}")
+            val action = HomeFragmentDirections.actionHomeFragmentToBlogItemDetailFragment(blogItem.blogItem.id)
+            findNavController().navigate(action)
+        }
+
         db.collection("blogs").get()
             .addOnSuccessListener {
                 for (blog in it){
                     val resultBlogItem = blog.toObject<BlogPost>()
-                    Log.d("BlogItem", "${resultBlogItem}")
+                    resultBlogItem.id = blog.id
+                    Log.d("BlogItem", "ID ${resultBlogItem.id}")
                     adapter.add(BlogItem(resultBlogItem))
                 }
             }
@@ -68,7 +76,7 @@ class HomeFragment : Fragment() {
 
 }
 
-class BlogItem(private val blogItem: BlogPost) : Item(){
+class BlogItem(val blogItem: BlogPost) : Item(){
     override fun bind(viewHolder: GroupieViewHolder, position: Int) {
         viewHolder.mainHeading.text = blogItem.title
         viewHolder.subHeading.text = blogItem.subheading

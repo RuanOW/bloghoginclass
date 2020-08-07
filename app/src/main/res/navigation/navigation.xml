@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_homeFragment_to_writeBlogFragment"
             app:destination="@id/writeBlogFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_blogItemDetailFragment"
+            app:destination="@id/blogItemDetailFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -49,5 +52,17 @@
         <action
             android:id="@+id/action_writeBlogFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/blogItemDetailFragment"
+        android:name="com.example.bloghoginclass.BlogItemDetailFragment"
+        android:label="fragment_blog_item_detail"
+        tools:layout="@layout/fragment_blog_item_detail" >
+        <action
+            android:id="@+id/action_blogItemDetailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="blogId"
+            app:argType="string" />
     </fragment>
 </navigation>
