@@ -12,16 +12,25 @@
         android:padding="15dp"
         >
 
+        <ImageButton
+            android:id="@+id/uploadBlogImage"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
+
         <EditText
             android:id="@+id/blogMainHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="64dp"
             android:ems="10"
             android:hint="Main Heading"
             android:inputType="textPersonName"
             android:textSize="36sp"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uploadBlogImage"
             tools:layout_editor_absoluteX="4dp" />
 
         <EditText

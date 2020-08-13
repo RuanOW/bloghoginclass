@@ -15,6 +15,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
+import com.squareup.picasso.Picasso
 
 
 class BlogItemDetailFragment : Fragment() {
@@ -35,10 +36,14 @@ class BlogItemDetailFragment : Fragment() {
         db.collection("blogs").document(args.blogId).get()
             .addOnSuccessListener {
                 val item = it.toObject<BlogPost>()
+                if(item == null) return@addOnSuccessListener
                 binding.blogDetailTitle.text = item?.title
                 binding.blogDetailSubeHeading.text = item?.subheading
                 binding.blogDetailTimeStamp.text = item?.timestamp?.toDate().toString()
                 binding.blogDetailBody.text = item?.body
+                if(item.headerImageUrl != ""){
+                    Picasso.get().load(item.headerImageUrl).fit().centerCrop().into(binding.blogHeaderImage)
+                }
             }
             .addOnFailureListener {
                 Toast.makeText(context, "Sorry could not get blog", Toast.LENGTH_SHORT).show()
